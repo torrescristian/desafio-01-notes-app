@@ -300,7 +300,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _store_notes_reducers__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./store/notes.reducers */ "./src/app/store/notes.reducers.ts");
 
 var appReducers = {
-    notes: _store_notes_reducers__WEBPACK_IMPORTED_MODULE_0__["notesReducer"],
+    notes: _store_notes_reducers__WEBPACK_IMPORTED_MODULE_0__["reducer"],
 };
 
 
@@ -812,12 +812,12 @@ var UPDATE = Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_0__["createAction"])('[
 /*!*****************************************!*\
   !*** ./src/app/store/notes.reducers.ts ***!
   \*****************************************/
-/*! exports provided: notesReducer */
+/*! exports provided: reducer */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "notesReducer", function() { return notesReducer; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "reducer", function() { return reducer; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _ngrx_store__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @ngrx/store */ "./node_modules/@ngrx/store/fesm5/store.js");
 /* harmony import */ var _notes_actions__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./notes.actions */ "./src/app/store/notes.actions.ts");
@@ -853,6 +853,9 @@ var notesReducer = Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_1__["createReduce
     var note = _a.note;
     return state.map(function (n) { return n.id === note.id ? note : n; });
 }));
+function reducer(state, action) {
+    return notesReducer(state, action);
+}
 
 
 /***/ }),

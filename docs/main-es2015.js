@@ -296,7 +296,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _store_notes_reducers__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./store/notes.reducers */ "./src/app/store/notes.reducers.ts");
 
 const appReducers = {
-    notes: _store_notes_reducers__WEBPACK_IMPORTED_MODULE_0__["notesReducer"],
+    notes: _store_notes_reducers__WEBPACK_IMPORTED_MODULE_0__["reducer"],
 };
 
 
@@ -788,12 +788,12 @@ const UPDATE = Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_0__["createAction"])(
 /*!*****************************************!*\
   !*** ./src/app/store/notes.reducers.ts ***!
   \*****************************************/
-/*! exports provided: notesReducer */
+/*! exports provided: reducer */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "notesReducer", function() { return notesReducer; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "reducer", function() { return reducer; });
 /* harmony import */ var _ngrx_store__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @ngrx/store */ "./node_modules/@ngrx/store/fesm2015/store.js");
 /* harmony import */ var _notes_actions__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./notes.actions */ "./src/app/store/notes.actions.ts");
 
@@ -818,6 +818,9 @@ const initialState = JSON.parse(localStorage.getItem('state')) || [
 const notesReducer = Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_0__["createReducer"])(initialState, Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_0__["on"])(_notes_actions__WEBPACK_IMPORTED_MODULE_1__["ADD"], (state, { note }) => [...state, Object.assign({}, note, { id: state.length
             ? state.reduce((acc, curr) => acc.id < curr.id ? curr : acc).id + 1
             : 1 })]), Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_0__["on"])(_notes_actions__WEBPACK_IMPORTED_MODULE_1__["REMOVE"], (state, { id }) => state.filter(n => n.id !== id)), Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_0__["on"])(_notes_actions__WEBPACK_IMPORTED_MODULE_1__["UPDATE"], (state, { note }) => state.map(n => n.id === note.id ? note : n)));
+function reducer(state, action) {
+    return notesReducer(state, action);
+}
 
 
 /***/ }),
