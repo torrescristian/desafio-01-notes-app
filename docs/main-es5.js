@@ -129,7 +129,7 @@ module.exports = "<app-list-item *ngFor=\"let note of notes\" [note]=\"note\"></
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<main class=\"sheet\" [class.sheet--editing]=\"editable\">\n    <textarea [class.text--editing]=\"editable\"\n    class=\"text\"\n    [formControl]=\"tempContentTxt\"\n    cols=\"30\"\n    rows=\"10\"\n    ></textarea>\n    <markdown\n    class=\"markdown\"\n    ngPreserveWhitespaces\n    [data]=\"tempContentTxt.value\"\n    ></markdown>\n</main>"
+module.exports = "<main class=\"sheet\" [class.sheet--editing]=\"editable\">\n    <textarea [class.text--editing]=\"editable\"\n        class=\"text\"\n        [formControl]=\"tempContentTxt\"\n        cols=\"30\"\n        rows=\"10\"\n    ></textarea>\n    <markdown\n        class=\"markdown\"\n        ngPreserveWhitespaces\n        [data]=\"tempContentTxt.value\"\n    ></markdown>\n</main>"
 
 /***/ }),
 
@@ -156,15 +156,21 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AppComponent", function() { return AppComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _ngrx_store__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @ngrx/store */ "./node_modules/@ngrx/store/fesm5/store.js");
+
 
 
 var AppComponent = /** @class */ (function () {
-    function AppComponent() {
+    function AppComponent(store) {
+        this.store = store;
         this.title = 'notes-app';
+        this.store.select('notes').subscribe(function (notes) {
+            localStorage.setItem('state', JSON.stringify(notes));
+        });
     }
-    AppComponent.prototype.addItem = function () {
-        // TODO: enviar un nuevo arreglo vacío al arreglo
-    };
+    AppComponent.ctorParameters = function () { return [
+        { type: _ngrx_store__WEBPACK_IMPORTED_MODULE_2__["Store"] }
+    ]; };
     AppComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
             selector: 'app-root',
@@ -818,7 +824,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var initialState = [
+var initialState = JSON.parse(localStorage.getItem('state')) || [
     {
         content: '- Contenido 1',
         id: 1,
