@@ -1,6 +1,6 @@
 import { ActionReducerMap } from '@ngrx/store';
 import { Note } from './interfaces/note';
-import { notesReducer } from './store/notes.reducers';
+import { reducer as notesReducer } from './store/notes.reducers';
 
 export interface AppState {
     notes: Note[];

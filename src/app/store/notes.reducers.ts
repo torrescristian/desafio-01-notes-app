@@ -1,4 +1,4 @@
-import { createReducer, on } from '@ngrx/store';
+import { createReducer, on, Action } from '@ngrx/store';
 import * as actions from './notes.actions';
 import { Note } from '../interfaces/note';
 
@@ -20,7 +20,7 @@ const initialState: Note[] = JSON.parse(localStorage.getItem('state')) as Note[]
   },
 ];
 
-export const notesReducer = createReducer(
+const notesReducer = createReducer(
   initialState,
   on(actions.ADD, (state, { note }): Note[] => [...state, {
     ...note,
@@ -31,3 +31,7 @@ export const notesReducer = createReducer(
   on(actions.REMOVE, (state, { id }): Note[] => state.filter(n => n.id !== id)),
   on(actions.UPDATE, (state, { note }): Note[] => state.map(n => n.id === note.id ? note : n)),
 );
+
+export function reducer(state: Note[] | undefined, action: Action) {
+  return notesReducer(state, action);
+}
