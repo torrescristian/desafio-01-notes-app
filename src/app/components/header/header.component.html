@@ -1,0 +1,17 @@
+<mat-card-header class="full-width-input">
+    <mat-card-title class="full-width-input">
+       <span class="title">Notes App</span>
+        <br/>
+        <!-- <input type="text" [formControl]="titleTxt" class="full-width-input"> -->
+        <mat-form-field>
+            <input matInput [formControl]="titleTxt" placeholder="Título">
+        </mat-form-field>
+        <br/>
+        <mat-form-field>
+            <textarea matInput [formControl]="contentTxt" placeholder="Nota"></textarea>
+        </mat-form-field>
+        <!-- <textarea cols="30" rows="10" [formControl]="contentTxt"></textarea> -->
+        <br/>
+        <app-create-button class="create-button" (click)="createNote()"></app-create-button>
+    </mat-card-title>
+</mat-card-header>

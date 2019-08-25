@@ -1,27 +1,23 @@
-# NotesApp
+# 1 - NotesApp
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.1.3.
+Tier: 1 — Beginner
 
-## Development server
+**Description**: Create and store your notes for a later purpose!
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## User Stories
 
-## Code scaffolding
+- User can create a note
+- User can edit a note
+- User can delete a note
+- When closing the browser window the notes will be stored and when the User returns, the data will be retrieved
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Bonus features
 
-## Build
+- User can create and edit a note in Markdown format. On save it will convert Markdown to HTML
+- User can see the date when he created the note
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+## Useful links and resources
 
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+- [localStorage](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage)
+- [Markdown Guide](https://www.markdownguide.org/basic-syntax/)
+- [Marked — A markdown parser](https://github.com/markedjs/marked)

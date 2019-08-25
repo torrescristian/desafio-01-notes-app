@@ -7,4 +7,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'notes-app';
+
+  addItem() {
+    // TODO: enviar un nuevo arreglo vacío al arreglo
+  }
 }

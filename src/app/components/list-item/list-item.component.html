@@ -1,0 +1,24 @@
+<mat-card class="card">
+    <mat-card-header class="header">
+        <mat-card-title class="header__title">
+            <div *ngIf="editable">
+                <input type="text" [formControl]="titleTxt">
+            </div>
+            <div *ngIf="!editable">
+                {{ note.title }}
+            </div>
+        </mat-card-title>
+        <div class="header__buttons">
+            <div *ngIf="editable">
+                <app-end-edit-button (click)="handleEndEdit()" class="header__end-edit-button"></app-end-edit-button>
+            </div>
+            <div *ngIf="!editable">
+                <app-edit-button (click)="handleEditItem()" class="header__edit-button"></app-edit-button>
+                <app-delete-button (click)="handleDeleteItem()" class="header__delete-button"></app-delete-button>
+            </div>
+        </div>
+    </mat-card-header>   
+    <mat-card-content class="content">
+        <app-sheet [note]="note" [editable]="editable" (tempContent)="handleTempContent($event)"></app-sheet>
+    </mat-card-content>
+</mat-card>

@@ -1,0 +1,19 @@
+.sheet {
+    display: grid;
+    grid-template-columns: 1fr;
+
+    &--editing {
+        grid-template-columns: 1fr 1fr;
+        grid-column-gap: 25px;
+    }
+
+    .text {
+        display: none;
+        &--editing {
+            display: block;
+        }
+    }
+    .markdown {
+        display: block;
+    }
+}
