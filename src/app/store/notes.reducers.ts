@@ -2,7 +2,7 @@ import { createReducer, on } from '@ngrx/store';
 import * as actions from './notes.actions';
 import { Note } from '../interfaces/note';
 
-const initialState: Note[] = [
+const initialState: Note[] = JSON.parse(localStorage.getItem('state')) as Note[] || [
   {
     content: '- Contenido 1',
     id: 1,

@@ -1,13 +1,13 @@
 <main class="sheet" [class.sheet--editing]="editable">
     <textarea [class.text--editing]="editable"
-    class="text"
-    [formControl]="tempContentTxt"
-    cols="30"
-    rows="10"
+        class="text"
+        [formControl]="tempContentTxt"
+        cols="30"
+        rows="10"
     ></textarea>
     <markdown
-    class="markdown"
-    ngPreserveWhitespaces
-    [data]="tempContentTxt.value"
+        class="markdown"
+        ngPreserveWhitespaces
+        [data]="tempContentTxt.value"
     ></markdown>
 </main>

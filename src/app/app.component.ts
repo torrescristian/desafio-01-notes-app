@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Store } from '@ngrx/store';
+import { AppState } from './app.reducers';
 
 @Component({
   selector: 'app-root',
@@ -8,7 +10,9 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'notes-app';
 
-  addItem() {
-    // TODO: enviar un nuevo arreglo vacío al arreglo
+  constructor(private store: Store<AppState>) {
+    this.store.select('notes').subscribe(notes => {
+      localStorage.setItem('state', JSON.stringify(notes));
+    });
   }
 }
