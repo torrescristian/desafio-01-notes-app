@@ -52,7 +52,7 @@ module.exports = "<button mat-icon-button>\n    <mat-icon [color]=\"color\">{{ i
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<button mat-raised-button color=\"primary\">\n    <mat-icon>add_circle</mat-icon> Add\n</button>"
+module.exports = "<button mat-raised-button color=\"primary\">\n    <mat-icon>add_circle</mat-icon> Crear\n</button>"
 
 /***/ }),
 
@@ -96,7 +96,7 @@ module.exports = "<app-button color=\"primary\" icon=\"check\"></app-button>"
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<mat-card-header class=\"full-width-input\">\n    <mat-card-title class=\"full-width-input\">\n       <span class=\"title\">Notes App</span>\n        <br/>\n        <!-- <input type=\"text\" [formControl]=\"titleTxt\" class=\"full-width-input\"> -->\n        <mat-form-field>\n            <input matInput [formControl]=\"titleTxt\" placeholder=\"Título\">\n        </mat-form-field>\n        <br/>\n        <mat-form-field>\n            <textarea matInput [formControl]=\"contentTxt\" placeholder=\"Nota\"></textarea>\n        </mat-form-field>\n        <!-- <textarea cols=\"30\" rows=\"10\" [formControl]=\"contentTxt\"></textarea> -->\n        <br/>\n        <app-create-button class=\"create-button\" (click)=\"createNote()\"></app-create-button>\n    </mat-card-title>\n</mat-card-header>\n"
+module.exports = "<mat-card-header class=\"full-width-input\">\n    <mat-card-title class=\"full-width-input\">\n       <span class=\"title\">Aplicación de Notas</span>\n        <br/>\n        <!-- <input type=\"text\" [formControl]=\"titleTxt\" class=\"full-width-input\"> -->\n        <mat-form-field>\n            <input matInput [formControl]=\"titleTxt\" placeholder=\"Título\">\n        </mat-form-field>\n        <br/>\n        <mat-form-field>\n            <textarea matInput [formControl]=\"contentTxt\" placeholder=\"Contenido\"></textarea>\n        </mat-form-field>\n        <!-- <textarea cols=\"30\" rows=\"10\" [formControl]=\"contentTxt\"></textarea> -->\n        <br/>\n        <app-create-button class=\"create-button\" (click)=\"createNote()\"></app-create-button>\n    </mat-card-title>\n</mat-card-header>\n"
 
 /***/ }),
 
@@ -794,19 +794,19 @@ __webpack_require__.r(__webpack_exports__);
 
 const initialState = [
     {
-        content: '- content 1',
+        content: '- Contenido 1',
         id: 1,
-        title: 'title 1',
+        title: 'Título 1',
     },
     {
-        content: '_content 2_',
+        content: '_Contenido 2_',
         id: 2,
-        title: 'title 2'
+        title: 'Título 2'
     },
     {
-        content: '### content 3',
+        content: '### Contenido 3',
         id: 3,
-        title: 'title 3'
+        title: 'Título 3'
     },
 ];
 const notesReducer = Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_0__["createReducer"])(initialState, Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_0__["on"])(_notes_actions__WEBPACK_IMPORTED_MODULE_1__["ADD"], (state, { note }) => [...state, Object.assign({}, note, { id: state.length

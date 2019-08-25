@@ -4,19 +4,19 @@ import { Note } from '../interfaces/note';
 
 const initialState: Note[] = [
   {
-    content: '- content 1',
+    content: '- Contenido 1',
     id: 1,
-    title: 'title 1',
+    title: 'Título 1',
   },
   {
-    content: '_content 2_',
+    content: '_Contenido 2_',
     id: 2,
-    title: 'title 2'
+    title: 'Título 2'
   },
   {
-    content: '### content 3',
+    content: '### Contenido 3',
     id: 3,
-    title: 'title 3'
+    title: 'Título 3'
   },
 ];
 
